@@ -118,7 +118,7 @@ void check_resolve_all_collision(Character* characters){
   for(int i=0;i<N_CHARACTERS;i++){
     for(int j=i+1;j<N_CHARACTERS;j++){//won't overflow since if i=N_CHARACTERS-1,
                                       //j=N_CHARACTERS, loop doesnt run :)
-      if(in_collision(characters[i],characters[j])){
+      if(in_collision(characters[i],characters[j]) && characters[i].alive==1 && characters[j].alive==1){
         resolve_collision(characters[i],characters[j]);
       }
       if(characters[i].alive==0){//will occur if loses the collusion
