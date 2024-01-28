@@ -70,7 +70,8 @@ bool in_collision(Character& c1, Character& c2){
   //ASSUMPTION: the (x,y) coordinaters of a character represents the centerpoint
     double distance = euclidean_distance(c1.x,c1.y,c2.x,c2.y);
     int combo_size = c1.size + c2.size;
-    if((distance<(combo_size))&&(c1.alive==1&&c2.alive==1)){
+    if((distance<=(combo_size))&&(c1.alive==1&&c2.alive==1)){
+      printf("%s\n","Found a collision");
       return true;
     }
 
