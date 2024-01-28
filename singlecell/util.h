@@ -68,12 +68,10 @@ bool in_collision(Character& c1, Character& c2){
   //       forget characters are circles!
   //
   //ASSUMPTION: the (x,y) coordinaters of a character represents the centerpoint
-  if(c1.alive && c2.alive){
-    float distance = euclidean_distance(c1.x,c1.y,c2.x,c2.y);
+    double distance = euclidean_distance(c1.x,c1.y,c2.x,c2.y);
     if((distance<(c1.size+c2.size))&&(c1.alive==1&&c2.alive==1)){
       return true;
     }
-  }
 
   return false;
 }
