@@ -43,7 +43,6 @@ void allocate_memory(Character** characters, int N_CHARACTERS){
 // Note: 0 = Up, 1 = Down, 2 = Left, 3 = Right
 void apply_moves(Character* characters, int move){
   //
-
   for(int i=0;i<N_CHARACTERS;i++){
     if(move==0 && characters[i].y<xy_max){
       characters[i].y +=1;
@@ -70,7 +69,7 @@ bool in_collision(Character& c1, Character& c2){
   //
   //ASSUMPTION: the (x,y) coordinaters of a character represents the centerpoint
   float distance = euclidean_distance(c1.x,c1.y,c2.x,c2.y);
-  if((distance<(c1.size+c2.size))&&(c1.alive==1&&c2.alive==1)){
+  if((distance<=(c1.size+c2.size))&&(c1.alive==1&&c2.alive==1)){
     return true;
   }
 
